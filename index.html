@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PST Study Guide — Pakistan Studies & Politics</title>
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --dark: #1b2838;
+    --card: #1e2d40;
+    --card2: #162032;
+    --teal: #00c9b1;
+    --gold: #f0a500;
+    --coral: #ff6b6b;
+    --lavender: #a78bfa;
+    --green: #34d399;
+    --blue: #60a5fa;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #2d3f55;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--navy); color: var(--text); line-height: 1.7; font-size: 15px; }
+
+  /* HEADER */
+  .hero { background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 50%, #0d2233 100%); border-bottom: 3px solid var(--teal); padding: 48px 40px 36px; text-align: center; }
+  .hero-badge { display: inline-block; background: var(--teal); color: #0d1b2a; font-weight: 700; font-size: 11px; letter-spacing: 3px; padding: 5px 16px; border-radius: 20px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 2.6rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .hero h1 span { color: var(--teal); }
+  .hero p { color: var(--muted); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .hero-meta { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
+  .hero-meta .chip { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: 6px 16px; border-radius: 20px; font-size: 13px; }
+  .hero-meta .chip span { color: var(--teal); font-weight: 600; }
+
+  /* NAV */
+  .toc { background: var(--card2); border-bottom: 1px solid var(--border); padding: 14px 40px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .toc-label { font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-right: 8px; }
+  .toc a { color: var(--muted); text-decoration: none; padding: 4px 12px; border-radius: 14px; font-size: 12.5px; transition: all 0.2s; border: 1px solid transparent; }
+  .toc a:hover { background: var(--border); color: var(--teal); border-color: var(--teal); }
+
+  /* MAIN */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px 60px; }
+
+  /* TOPIC SECTION */
+  .topic { margin: 48px 0 0; }
+  .topic-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--border); }
+  .topic-num { background: var(--teal); color: #0d1b2a; font-weight: 900; font-size: 13px; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 4px; }
+  .topic-num.gold { background: var(--gold); }
+  .topic-num.coral { background: var(--coral); color: #fff; }
+  .topic-num.lav { background: var(--lavender); color: #fff; }
+  .topic-num.green { background: var(--green); color: #0d1b2a; }
+  .topic-num.blue { background: var(--blue); color: #0d1b2a; }
+  .topic-info { flex: 1; }
+  .topic-week { font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .topic-info h2 { font-size: 1.55rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .topic-clo { font-size: 12px; color: var(--teal); background: rgba(0,201,177,0.1); display: inline-block; padding: 2px 10px; border-radius: 10px; border: 1px solid rgba(0,201,177,0.3); }
+
+  /* CARDS */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 16px 0; }
+  .card.accent-teal { border-left: 4px solid var(--teal); }
+  .card.accent-gold { border-left: 4px solid var(--gold); }
+  .card.accent-coral { border-left: 4px solid var(--coral); }
+  .card.accent-lav { border-left: 4px solid var(--lavender); }
+  .card.accent-green { border-left: 4px solid var(--green); }
+  .card.accent-blue { border-left: 4px solid var(--blue); }
+  .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .card h3 .icon { font-size: 16px; }
+  .card p { color: var(--muted); margin-bottom: 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card ul, .card ol { margin: 8px 0 0 20px; color: var(--muted); }
+  .card li { margin: 5px 0; }
+  .card strong { color: var(--text); }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 20px; }
+  .tl-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--teal); border: 2px solid var(--navy); }
+  .tl-item .tl-year { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; margin-bottom: 2px; }
+  .tl-item p { color: var(--muted); font-size: 14px; }
+
+  /* BADGES */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11.5px; font-weight: 600; margin: 2px; }
+  .badge-teal { background: rgba(0,201,177,0.15); color: var(--teal); border: 1px solid rgba(0,201,177,0.3); }
+  .badge-gold { background: rgba(240,165,0,0.15); color: var(--gold); border: 1px solid rgba(240,165,0,0.3); }
+  .badge-coral { background: rgba(255,107,107,0.15); color: var(--coral); border: 1px solid rgba(255,107,107,0.3); }
+  .badge-lav { background: rgba(167,139,250,0.15); color: var(--lavender); border: 1px solid rgba(167,139,250,0.3); }
+  .badge-green { background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid rgba(52,211,153,0.3); }
+
+  /* PHASE TABLE */
+  .phase-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .phase-table th { background: #162840; color: var(--teal); padding: 10px 14px; text-align: left; font-size: 13px; border-bottom: 2px solid var(--border); }
+  .phase-table td { padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--border); font-size: 13.5px; vertical-align: top; }
+  .phase-table tr:hover td { background: rgba(255,255,255,0.03); }
+  .phase-table td:first-child { color: var(--text); font-weight: 600; }
+
+  /* Q&A SECTION */
+  .qa-section { background: var(--card2); border: 2px solid rgba(240,165,0,0.3); border-radius: 14px; padding: 26px 28px; margin: 28px 0; }
+  .qa-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .qa-head .qa-icon { background: var(--gold); color: #0d1b2a; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; flex-shrink: 0; }
+  .qa-head h3 { font-size: 1.15rem; font-weight: 700; color: var(--gold); }
+  .qa-head p { font-size: 12px; color: var(--muted); }
+  .question { margin: 18px 0; }
+  .question .q-label { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+  .question .q-text { font-weight: 600; color: var(--text); font-size: 15px; margin-bottom: 10px; background: rgba(240,165,0,0.08); padding: 10px 14px; border-radius: 8px; border-left: 3px solid var(--gold); }
+  .question .a-label { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; margin-top: 10px; }
+  .question .a-text { color: var(--muted); font-size: 14px; line-height: 1.8; }
+  .question .a-text p { margin-bottom: 8px; }
+  .question .a-text ol, .question .a-text ul { margin-left: 20px; }
+  .question .a-text li { margin: 5px 0; }
+  .question .marks-box { display: inline-block; background: rgba(0,201,177,0.12); color: var(--teal); border: 1px solid rgba(0,201,177,0.3); padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-bottom: 6px; }
+  .q-divider { border: none; border-top: 1px dashed var(--border); margin: 18px 0; }
+
+  /* KEY POINTS BOX */
+  .keybox { background: rgba(0,201,177,0.07); border: 1px solid rgba(0,201,177,0.2); border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
+  .keybox .kbtitle { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+  .keybox ul { margin-left: 16px; }
+  .keybox li { color: var(--muted); font-size: 14px; margin: 4px 0; }
+
+  /* CALLOUT */
+  .callout { background: rgba(240,165,0,0.07); border: 1px solid rgba(240,165,0,0.25); border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .callout strong { color: var(--gold); }
+  .callout p { color: var(--muted); font-size: 14px; margin: 0; }
+
+  /* SECTION DIVIDER */
+  .section-div { height: 2px; background: linear-gradient(90deg, var(--teal), transparent); margin: 40px 0 0; border-radius: 2px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 680px) {
+    .hero h1 { font-size: 1.8rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .toc { padding: 12px 16px; }
+    .container { padding: 0 14px 40px; }
+    .hero { padding: 28px 16px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Pakistan Studies — Complete Lecture Notes</div>
+  <h1>PST <span>Study Guide</span></h1>
+  <p>Comprehensive notes, explanations, and exam Q&A for every lecture — written for beginners</p>
+  <div class="hero-meta">
+    <div class="chip">Weeks <span>07–10</span></div>
+    <div class="chip">Topics <span>6</span></div>
+    <div class="chip">10-Mark Questions <span>included</span></div>
+    <div class="chip">Beginner Friendly <span>✓</span></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="toc">
+  <span class="toc-label">Jump to</span>
+  <a href="#t1">PPP Era</a>
+  <a href="#t2">PTI Era</a>
+  <a href="#t3">Media & Security</a>
+  <a href="#t4">Foreign Policy Intro</a>
+  <a href="#t5">FP Six Phases</a>
+  <a href="#t6">Big Powers & Neighbours</a>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════
+     TOPIC 1 — PPP ERA
+══════════════════════════════════════════ -->
+<div class="topic" id="t1">
+  <div class="topic-header">
+    <div class="topic-num">1</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 07 — Lecture 01 &amp; 02 (Zardari Era PDF)</div>
+      <h2>Struggle for Democracy: PPP Era (2008–2013)</h2>
+      <span class="topic-clo">CLO 02 &amp; 03 — Political &amp; Constitutional Evolution</span>
+    </div>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">🏛️</span> What Happened in 2008? — Political Context (For Beginners)</h3>
+    <p>After 9 years of military rule under General Pervez Musharraf, Pakistan held general elections in February 2008. The elections took place in a very difficult security environment — there were terrorist attacks, political instability, and economic problems. Think of it as a country trying to restart democracy after a long pause.</p>
+    <p><strong>PPP (Pakistan People's Party)</strong> won the most seats — 95 out of 248 seats in the National Assembly — and formed a coalition government. They partnered with MQM, ANP, JUI, and initially PML-N. Later PML-N left and became the opposition.</p>
+    <div class="keybox">
+      <div class="kbtitle">Key Facts to Remember</div>
+      <ul>
+        <li>PPPP won <strong>95 seats</strong> out of 248 in the National Assembly</li>
+        <li>Coalition partners: MQM, ANP, JUI, PML-N (PML-N left later)</li>
+        <li>Asif Ali Zardari became President</li>
+        <li>Yousaf Raza Gilani became Prime Minister</li>
+        <li>PPP completed its full 5-year constitutional tenure (2008–2013) — a historic first</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card accent-gold">
+      <h3><span class="icon">⚖️</span> Restoration of Supreme Court Judges</h3>
+      <p>Musharraf had sacked Chief Justice Iftikhar Chaudhary and other judges in 2007. There were massive public protests (Lawyers' Movement) demanding their restoration. PPP government ultimately restored the judges in March 2009 after much political pressure.</p>
+      <p><strong>Consequence:</strong> This backfired on PPP because the restored judiciary, especially CJ Iftikhar Chaudhary, began aggressive judicial activism and targeted PPP's own government.</p>
+    </div>
+    <div class="card accent-coral">
+      <h3><span class="icon">🔨</span> Judicial Activism Against PPP</h3>
+      <p>After restoration, the Supreme Court became very active and took up cases against the PPP government. This resulted in:</p>
+      <ul>
+        <li>Contempt notices to PM Gilani</li>
+        <li>PM Gilani removed from office (June 2012)</li>
+        <li>Arrest warrant against Raja Pervaiz Ashraf (PM-2)</li>
+        <li>Constant legal battles over Swiss money case (NRO)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card accent-lav">
+    <h3><span class="icon">📜</span> The 18th Constitutional Amendment — Most Important Achievement</h3>
+    <p>Think of this as PPP's biggest gift to Pakistan's democracy. Before the 18th Amendment, the President had too much power and could dismiss the government whenever he wanted. This amendment fixed that.</p>
+    <div class="two-col" style="margin-top:12px">
+      <div>
+        <strong style="color:var(--lavender)">What Changed (Key Features):</strong>
+        <ul style="margin-top:8px">
+          <li>Removed <strong>Article 58(2)(b)</strong> — Presidents could no longer dismiss elected governments</li>
+          <li>Strengthened the Prime Minister's powers</li>
+          <li>Gave more powers to provinces (Provincial Autonomy)</li>
+          <li>Abolished the Concurrent Legislative List — education, health, culture now provincial subjects</li>
+          <li>Created Judicial Commission for appointing judges</li>
+          <li>Re-activated Council of Common Interests (CCI)</li>
+          <li>Restructured NFC Award (money distribution to provinces)</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--lavender)">Background:</strong>
+        <ul style="margin-top:8px">
+          <li>PPP and PML-N had signed Charter of Democracy (CoD) in 2006 in London while both were in exile under Musharraf</li>
+          <li>After elections, arch-rivals PPP and PML-N cooperated to pass this amendment</li>
+          <li>Seen as a positive sign for democratic stability</li>
+          <li>Passed with consensus of all major parties</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card accent-coral">
+    <h3><span class="icon">❌</span> Removal of PM Yousaf Raza Gilani</h3>
+    <p>The Supreme Court had ordered the PPP government to write a letter to Swiss authorities regarding money cases against President Zardari. The government refused, claiming presidential immunity. The Supreme Court held PM Gilani in contempt of court and disqualified him in <strong>June 2012</strong>. He was replaced by Raja Pervaiz Ashraf, who himself faced an arrest warrant in December 2012 for corruption during his tenure as Water &amp; Power Minister.</p>
+    <p>The deadlock only ended in October 2012 when the government finally complied with SC orders and contacted Swiss authorities.</p>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">📉</span> Why PPP Lost 2013 Elections — Failures</h3>
+    <ul>
+      <li><strong>Economic mismanagement:</strong> Inherited a war-torn economy dependent on IMF and foreign aid</li>
+      <li><strong>Energy crisis:</strong> Crippling electricity and gas shortages (load-shedding for 12–18 hours daily)</li>
+      <li><strong>Inflation:</strong> Unbridled price hike making daily life difficult</li>
+      <li><strong>Corruption:</strong> Constant corruption charges against leadership (Zardari = "Mr. 10%")</li>
+      <li><strong>Institutional decline:</strong> PIA, Pakistan Railways, Pakistan Steel, WAPDA all weakened</li>
+      <li><strong>Judicial battles:</strong> Two PMs faced legal action — unique in Pakistani history</li>
+      <li><strong>Terrorism:</strong> Failed to control Taliban insurgency in KPK and Balochistan</li>
+      <li><strong>No tangible achievements:</strong> Could not highlight any major public welfare accomplishments</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <p><strong>CPEC Initiation:</strong> One positive legacy — the framework for CPEC (China Pakistan Economic Corridor) was initiated during the PPP era through early Pak-China cooperation agreements, though it was formally launched under PML-N later.</p>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>PPP Era / Zardari Government 2008–2013</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Critically evaluate the significance of the 18th Constitutional Amendment and its impact on Pakistan's democratic and federal structure.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> The 18th Constitutional Amendment, passed in April 2010 during the PPP government, is widely considered the most comprehensive constitutional reform since Pakistan's independence. It fundamentally reshaped the balance of power between the President, Prime Minister, and provinces.</p>
+        <p><strong>Key Changes and Their Impact:</strong></p>
+        <ol>
+          <li><strong>Removal of Article 58(2)(b):</strong> Before this, Presidents had the power to dissolve the National Assembly. This had been misused repeatedly (by Ghulam Ishaque Khan, Farooq Leghari). Its removal meant only parliament could remove a PM through a vote of no-confidence, strengthening democratic accountability.</li>
+          <li><strong>Provincial Autonomy:</strong> The Concurrent Legislative List (subjects shared between centre and provinces) was abolished. Around 47 subjects — including education, health, and agriculture — were transferred to provinces. This decentralised power and addressed federalism's weaknesses.</li>
+          <li><strong>NFC Award Restructuring:</strong> The National Finance Commission award was reformed to give provinces more revenue, particularly benefiting smaller provinces like Balochistan and KPK.</li>
+          <li><strong>Judicial Commission:</strong> A Judicial Commission was created for judges' appointments, reducing executive influence over judiciary.</li>
+          <li><strong>Re-activation of CCI:</strong> Council of Common Interests, a forum for resolving federal-provincial disputes, was strengthened.</li>
+        </ol>
+        <p><strong>Significance:</strong> The amendment shifted Pakistan from a de facto presidential system to a genuine parliamentary democracy. It addressed grievances of smaller provinces. The PPP and PML-N passing it together demonstrated political maturity.</p>
+        <p><strong>Criticism:</strong> Critics argue implementation was poor, provinces lacked administrative capacity to manage devolved functions, and fiscal federalism remained incomplete. Some felt the amendment also weakened centre's capacity to ensure uniformity in services.</p>
+        <p><strong>Conclusion:</strong> Despite criticism, the 18th Amendment remains the most progressive constitutional reform in Pakistan's history, cementing parliamentary supremacy and provincial rights in the constitution.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <div class="question">
+      <div class="q-label">Question 2</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Discuss the role of judicial activism during the PPP government (2008–2013) and its consequences for democratic governance.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> The PPP era witnessed unprecedented judicial activism, primarily under Chief Justice Iftikhar Chaudhary. After his restoration in 2009, the Supreme Court took an aggressive role that had far-reaching consequences for the government.</p>
+        <p><strong>Key Events of Judicial Activism:</strong></p>
+        <ol>
+          <li><strong>NRO Case (2009):</strong> The SC declared the National Reconciliation Ordinance unconstitutional, opening corruption cases against thousands including PPP leaders.</li>
+          <li><strong>Swiss Letter Issue:</strong> SC ordered government to write to Swiss authorities seeking details of Zardari's alleged money laundering cases. Government refused citing presidential immunity.</li>
+          <li><strong>Contempt Proceedings:</strong> PM Gilani was found guilty of contempt of court for refusing SC orders. In June 2012, SC declared him disqualified — the first elected PM to be removed by judiciary.</li>
+          <li><strong>Raja Pervaiz Ashraf:</strong> His successor also faced an arrest warrant for corruption in power sector projects.</li>
+        </ol>
+        <p><strong>Consequences:</strong></p>
+        <ul>
+          <li><strong>Positive:</strong> Demonstrated judiciary's independence; created accountability precedent; showed no one is above the law</li>
+          <li><strong>Negative:</strong> Created constitutional crisis; judicial overreach into executive domain; governance paralysis; frequent confrontation between institutions weakened democratic norms</li>
+        </ul>
+        <p><strong>Civil-Military Dimension:</strong> Memogate scandal also emerged during this period, further weakening civil-military relations.</p>
+        <p><strong>Conclusion:</strong> While judicial independence is vital for democracy, the PPP era showed that excessive judicial activism without respect for institutional boundaries can destabilise democratic governance. The ideal is judicial accountability, not judicial supremacy.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-div"></div>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 2 — PTI ERA
+══════════════════════════════════════════ -->
+<div class="topic" id="t2">
+  <div class="topic-header">
+    <div class="topic-num gold">2</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 07 — Lecture 01 &amp; 02 (PPTX)</div>
+      <h2>Democratization in Pakistan: PTI Era (2018–2022)</h2>
+      <span class="topic-clo">CLO 02 — Evaluate effectiveness of political regimes</span>
+    </div>
+  </div>
+
+  <div class="card accent-gold">
+    <h3><span class="icon">🗳️</span> 2018 Elections — How PTI Rose to Power</h3>
+    <p>PTI (Pakistan Tehreek-e-Insaf) was founded by Imran Khan in 1996 but remained a small party for years. Everything changed in 2011 when PTI's Lahore jalsa (rally) drew millions, establishing it as a major force. In 2013 PTI won KPK (Khyber Pakhtunkhwa) province. By 2018, it broke through nationally.</p>
+    <div class="keybox">
+      <div class="kbtitle">2018 Election Results</div>
+      <ul>
+        <li>PTI won <strong>116 National Assembly seats</strong> and formed government at centre</li>
+        <li>In <strong>Punjab:</strong> PTI won 181 seats; PML-N dropped to 166 — lost majority</li>
+        <li>In <strong>Sindh:</strong> PTI gained 30 seats (up from 2013); PPP retained province</li>
+        <li>In <strong>KPK:</strong> PTI strengthened its existing government</li>
+        <li>PTI positioned itself as alternative to 40-year dynasties (Bhuttos, Sharifs)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">📋</span> PTI's 14-Point Manifesto "Naya Pakistan" — Key Promises</h3>
+    <div class="two-col">
+      <ul>
+        <li>Create <strong>10 million jobs</strong> in 5 years</li>
+        <li>Build <strong>5 million affordable homes</strong></li>
+        <li>Accountability campaign against corruption</li>
+        <li>Reform FBR (tax system)</li>
+        <li>Digitalise government services</li>
+        <li>Complete all CPEC projects</li>
+        <li>Introduce <strong>Sehat Insaf Card</strong> (health insurance)</li>
+      </ul>
+      <ul>
+        <li>Reform education at all levels</li>
+        <li>Create 10 technical universities in 5 years</li>
+        <li>Uniform syllabus for public/private/madrassas</li>
+        <li>Remove political influence from police</li>
+        <li>Foreign policy based on mutual interest</li>
+        <li>Focus on economic diplomacy for FDI &amp; trade</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card accent-coral">
+      <h3><span class="icon">📊</span> Economic Performance (2018–2022)</h3>
+      <p>PTI's economic record was mixed at best. Key data points:</p>
+      <ul>
+        <li>CPI Inflation: <strong>4.7% → 12.2%</strong> (nearly tripled)</li>
+        <li>Food inflation surged by <strong>960 basis points</strong></li>
+        <li>Core inflation rose by <strong>230 basis points</strong></li>
+        <li>10M jobs promise was <strong>unrealistic</strong> — not achieved</li>
+        <li>GDP growth capped at <strong>6.1%</strong> (not sustained)</li>
+        <li>Exports boosted by 1.7% (a positive)</li>
+        <li>Foreign Direct Investment: <strong>missed opportunity</strong></li>
+      </ul>
+    </div>
+    <div class="card accent-lav">
+      <h3><span class="icon">🌍</span> Foreign Policy Under PTI</h3>
+      <ul>
+        <li>Opened <strong>Kartarpur Corridor</strong> (2019) as peace gesture with India</li>
+        <li>India's revocation of Art. 370 (Kashmir) worsened ties</li>
+        <li>Strained US relations — Imran accused US of regime change conspiracy</li>
+        <li>CPEC mismanagement — several projects halted</li>
+        <li>Weak China relations despite CPEC</li>
+        <li>Ukraine war stance reversal created controversy</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card accent-green">
+    <h3><span class="icon">💥</span> Fall of PTI Government — April 2022</h3>
+    <p>Imran Khan became the <strong>first Pakistani PM to be removed via vote of no-confidence</strong>. Two key factors led to his fall:</p>
+    <div class="two-col" style="margin-top:12px">
+      <div>
+        <strong style="color:var(--green)">Inside Parliament:</strong>
+        <ul style="margin-top:6px">
+          <li>PTI lost support of coalition allies</li>
+          <li>Opposition PDM (PML-N + PPP + others) united</li>
+          <li>PTI lost majority needed to survive no-confidence vote</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--green)">Outside Parliament:</strong>
+        <ul style="margin-top:6px">
+          <li>Lost support of military establishment</li>
+          <li>Fell out with military over senior appointments</li>
+          <li>Policy disagreements with army leadership</li>
+          <li>Shehbaz Sharif (PML-N) elected PM on 11 April 2022</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><strong>"Foreign Conspiracy" Claim:</strong> Imran Khan claimed his removal was a US-backed regime change conspiracy. He later shifted blame more directly onto Pakistan's military leadership — a claim that had no-precedent in Pakistani politics.</p>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>PTI Era 2018–2022</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Assess the economic performance of PTI government (2018–2022) and explain why it failed to deliver on its manifesto promises.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> PTI came to power in 2018 with ambitious economic promises under the "Naya Pakistan" slogan. However, its economic performance fell significantly short of expectations due to a combination of inherited problems, policy failures, and global challenges.</p>
+        <p><strong>Manifesto vs Reality:</strong></p>
+        <ol>
+          <li><strong>Jobs Promise:</strong> PTI promised 10 million jobs but the economy grew at only 6.1% GDP — insufficient to generate that many jobs, especially when COVID-19 hit in 2020.</li>
+          <li><strong>Housing:</strong> The Naya Pakistan Housing project started but construction of 5 million homes was far from achieved.</li>
+          <li><strong>Inflation Catastrophe:</strong> CPI inflation rose from 4.7% to 12.2% — nearly tripling. Food inflation hit the poorest hardest, increasing by 960 basis points. Petrol, electricity prices soared.</li>
+          <li><strong>Exports:</strong> Exports increased by 1.7% — a minor positive but insufficient given Pakistan's trade deficit.</li>
+          <li><strong>FDI:</strong> Foreign Direct Investment targets were missed — investors were cautious due to policy uncertainty.</li>
+        </ol>
+        <p><strong>Reasons for Failure:</strong></p>
+        <ul>
+          <li>Inherited economic crisis and IMF debt obligations from previous government</li>
+          <li>COVID-19 pandemic (2020–21) disrupted global and domestic economy</li>
+          <li>Rising global commodity prices, especially oil</li>
+          <li>Policy inconsistency — three finance ministers in four years</li>
+          <li>Governance issues and corruption in implementation</li>
+          <li>Political instability and judicial conflicts diverted attention</li>
+        </ul>
+        <p><strong>Conclusion:</strong> PTI's economic governance suffered from over-promising and under-delivering. While some external factors like COVID were beyond their control, internal policy failures and political distractions made economic management secondary to political survival.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <div class="question">
+      <div class="q-label">Question 2</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Analyse the fall of PTI government in 2022. What does it reveal about the nature of civil-military relations in Pakistan?</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> In April 2022, Imran Khan's PTI government was voted out through a parliamentary no-confidence motion — a first in Pakistan's history. The circumstances of his removal exposed deep structural tensions in Pakistan's civil-military relationship.</p>
+        <p><strong>Immediate Causes of Fall:</strong></p>
+        <ol>
+          <li><strong>Loss of coalition support:</strong> MQM-P, BAP, and other coalition allies withdrew, leaving PTI without parliamentary majority</li>
+          <li><strong>Military estrangement:</strong> PTI allegedly fell out with Gen. Bajwa over ISI chief appointment and foreign policy matters</li>
+          <li><strong>Opposition unity:</strong> PDM (PML-N, PPP, JUI-F) successfully united to table the no-confidence motion</li>
+        </ol>
+        <p><strong>Civil-Military Relations Analysis:</strong></p>
+        <ul>
+          <li>PTI's 2018 victory was widely believed to have had military's tacit support (allegations of pre-poll rigging, censorship of PTI rivals)</li>
+          <li>When PTI lost army's confidence, its political survival became impossible</li>
+          <li>This demonstrates the "establishment" remains the kingmaker in Pakistani politics</li>
+          <li>Imran's "foreign conspiracy" narrative attempted to shield himself from accountability to military</li>
+          <li>His aggressive criticism of military after removal was unprecedented and led to his arrest in May 2023</li>
+        </ul>
+        <p><strong>Broader Implications:</strong> The PTI episode reveals that in Pakistan, civilian governments succeed only with military support. When that support is withdrawn — regardless of popular support — governments fall. This represents a fundamental democratic deficit where elected leaders are not truly sovereign.</p>
+        <p><strong>Conclusion:</strong> Pakistan's democratic consolidation requires genuine civilian supremacy over military institutions — not just constitutional provisions but practical enforcement. The PTI saga reinforces that this remains an unfinished task.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-div"></div>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 3 — MEDIA LAWS & HYBRID WARFARE
+══════════════════════════════════════════ -->
+<div class="topic" id="t3">
+  <div class="topic-header">
+    <div class="topic-num coral">3</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 08 — Lecture 01 &amp; 02</div>
+      <h2>Media Laws &amp; National Security: Hybrid Warfare in Pakistan</h2>
+      <span class="topic-clo">CLO 02 &amp; 03 — Governance Challenges &amp; Security</span>
+    </div>
+  </div>
+
+  <div class="card accent-coral">
+    <h3><span class="icon">⚔️</span> What is Hybrid Warfare? (Simple Explanation)</h3>
+    <p>Traditional warfare means armies fighting with guns and tanks. <strong>Hybrid Warfare</strong> is different — it's a strategy where you weaken an enemy without directly attacking them militarily. Instead, you use <strong>fake news, cyber attacks, propaganda, economic pressure, and psychological manipulation</strong>.</p>
+    <p>Imagine someone spreading rumours about your family to make your neighbours distrust you, instead of fighting you directly. That's the basic idea of hybrid warfare in international politics.</p>
+    <p><strong>Fifth Generation Warfare (5GW)</strong> is the most modern form — where the "battlefield" is not land but <strong>public opinion, social media, and people's minds</strong>.</p>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">🔑</span> 5 Key Characteristics of Hybrid Warfare</h3>
+    <div class="two-col">
+      <ul>
+        <li><strong>1. Information Manipulation:</strong> Spreading false stories, misleading facts, controlling narratives</li>
+        <li><strong>2. Cyber Operations:</strong> Hacking government systems, disrupting digital infrastructure, data theft</li>
+        <li><strong>3. Psychological Operations (PsyOps):</strong> Creating fear, panic, and distrust among public</li>
+      </ul>
+      <ul>
+        <li><strong>4. Use of Non-State Actors:</strong> Funding terrorist groups, extremists, or violent gangs inside the target country</li>
+        <li><strong>5. Economic &amp; Diplomatic Pressure:</strong> Sanctions, trade wars, isolating a country internationally</li>
+      </ul>
+    </div>
+    <div class="keybox" style="margin-top:14px">
+      <div class="kbtitle">How Pakistan is Targeted Through Hybrid Warfare</div>
+      <ul>
+        <li><strong>Civil-military relations:</strong> Narratives to create rift between army and civilians</li>
+        <li><strong>Political stability:</strong> Amplifying political crises through social media</li>
+        <li><strong>Ethnic &amp; sectarian divisions:</strong> Fuelling Shia-Sunni or Baloch-Punjabi tensions</li>
+        <li><strong>Economic confidence:</strong> Spreading false economic news to cause capital flight</li>
+        <li><strong>International reputation:</strong> FATF grey/black listing campaigns, human rights narratives</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card accent-gold">
+    <h3><span class="icon">📱</span> PECA 2016 — Pakistan's Digital Law (Explained Simply)</h3>
+    <p><strong>PECA = Prevention of Electronic Crimes Act</strong>. Passed in 2016, this is Pakistan's main law to deal with crimes done through the internet, phones, and digital platforms. Think of it as the law that says what you can and cannot do online.</p>
+    <div class="two-col" style="margin-top:12px">
+      <div>
+        <strong style="color:var(--gold)">What PECA Covers (Offences):</strong>
+        <ul style="margin-top:6px">
+          <li>Illegal access to data/hacking</li>
+          <li>Online fraud &amp; identity theft</li>
+          <li>Cyber-stalking &amp; harassment</li>
+          <li>Defamation online</li>
+          <li>Spamming &amp; spoofing</li>
+          <li>Spreading fake news &amp; false information</li>
+          <li>Threats to national security online</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--gold)">Penalties:</strong>
+        <ul style="margin-top:6px">
+          <li>Prison: up to 7–14 years for severe crimes</li>
+          <li>Heavy fines</li>
+          <li>Content removal/blocking by government</li>
+        </ul>
+        <strong style="color:var(--gold)" style="margin-top:10px;display:block">2025 Amendments:</strong>
+        <ul style="margin-top:6px">
+          <li>Specifically targets "fake news" on social media &amp; TV</li>
+          <li>Removed exemptions for regulated channels</li>
+          <li>Extended defamation penalties</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><strong>Controversy:</strong> Critics say PECA is used to silence journalists, opposition, and activists. The balance between national security and freedom of expression is a major democratic debate in Pakistan.</p>
+    </div>
+  </div>
+
+  <div class="card accent-lav">
+    <h3><span class="icon">🧠</span> Psychological Manipulation — Methods Used</h3>
+    <div class="two-col">
+      <ul>
+        <li><strong>Fake News:</strong> Completely fabricated stories spread to mislead public</li>
+        <li><strong>Propaganda Narratives:</strong> Biased framing of real events to distort understanding</li>
+        <li><strong>Selective Information Leaks:</strong> Sharing only damaging parts of a story</li>
+      </ul>
+      <ul>
+        <li><strong>Emotional Manipulation:</strong> Triggering anger, fear, or hatred through provocative content</li>
+        <li><strong>Bot Amplification:</strong> Using fake social media accounts to make false trends look real</li>
+        <li>Spreading economic panic through false financial news</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>Media Laws &amp; Hybrid Warfare</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">What is Fifth Generation Warfare (5GW)? Discuss how it threatens Pakistan's national security with specific examples.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> Fifth Generation Warfare (5GW) represents the most contemporary evolution of conflict, where battles are fought not on physical battlefields but in the realm of information, psychology, and public perception. Unlike conventional wars, 5GW aims to defeat an adversary without firing a single bullet.</p>
+        <p><strong>Definition:</strong> 5GW combines cyber operations, disinformation campaigns, propaganda, psychological operations, and non-state actor mobilisation to achieve strategic objectives. The primary weapon is information.</p>
+        <p><strong>Key Dimensions of 5GW Threats to Pakistan:</strong></p>
+        <ol>
+          <li><strong>Civil-Military Narrative War:</strong> Adversaries amplify any rift between military and civilian institutions through social media, making governance difficult. During 2021–22, coordinated online campaigns exploited the PTI-military tensions.</li>
+          <li><strong>FATF/Grey-listing Campaigns:</strong> Pakistan's Financial Action Task Force (FATF) grey-listing (2018–22) was partly fuelled by internationally coordinated campaigns highlighting Pakistan's terror financing record — a classic example of economic and reputational hybrid warfare.</li>
+          <li><strong>Balochistan Insurgency Narrative:</strong> Foreign-funded media campaigns highlighting Baloch separatism and human rights issues damage Pakistan's international reputation and international support.</li>
+          <li><strong>Religious Extremism Exploitation:</strong> Online amplification of blasphemy incidents, Shia-Sunni tensions, or sectarian violence to create internal chaos.</li>
+          <li><strong>Economic Disinformation:</strong> False news about Pakistan's economic collapse can trigger currency sell-off or capital flight.</li>
+        </ol>
+        <p><strong>Pakistan's Response — PECA:</strong> The Prevention of Electronic Crimes Act (2016) provides legal tools to counter cyber threats. However, balancing security with press freedom remains a challenge.</p>
+        <p><strong>Conclusion:</strong> Pakistan faces multidimensional 5GW threats primarily from regional adversaries. Building information resilience — through media literacy, strong institutions, and responsible regulation — is essential for national security in the digital age.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <div class="question">
+      <div class="q-label">Question 2</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Critically analyse PECA 2016 and its role in countering cyber threats. Is it a tool for security or censorship?</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> The Prevention of Electronic Crimes Act (PECA) 2016 is Pakistan's primary legislation governing digital crimes and cybersecurity. Its enactment reflected the growing importance of regulating digital spaces. However, it has remained controversial — praised as a security tool and criticised as a censorship mechanism.</p>
+        <p><strong>PECA as a Security Tool:</strong></p>
+        <ul>
+          <li>Provides legal basis to tackle cybercrime, including hacking, financial fraud, data theft, and child exploitation online</li>
+          <li>Enables monitoring and blocking of content threatening national security — crucial in hybrid warfare era</li>
+          <li>Creates framework to combat online terrorism recruitment and extremist propaganda</li>
+          <li>Addresses cyber harassment — particularly important for women facing online abuse</li>
+          <li>2025 amendments specifically target fake news — critical in disinformation era</li>
+        </ul>
+        <p><strong>PECA as Censorship Tool (Criticism):</strong></p>
+        <ul>
+          <li>Vague definitions of "fake news" and "false information" can be used against legitimate criticism</li>
+          <li>Journalists and bloggers have been arrested under PECA for critical reporting</li>
+          <li>Opposition politicians claim PECA is weaponised against them</li>
+          <li>2025 amendments criminalise online content without clear judicial oversight</li>
+          <li>Human rights organisations (Amnesty International, RSF) have criticised PECA as threatening press freedom</li>
+        </ul>
+        <p><strong>Comparative Analysis:</strong> Democratic countries also regulate digital spaces — EU's GDPR, UK's Online Safety Act — but with stronger safeguards for expression and independent oversight bodies.</p>
+        <p><strong>Conclusion:</strong> PECA is a necessary law but imperfectly designed. For it to serve security without becoming censorship, Pakistan needs independent judicial oversight, clearer definitions, and greater transparency in its application. Security and freedom of expression are not mutually exclusive — both can and must be protected.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-div"></div>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 4 — FOREIGN POLICY INTRO
+══════════════════════════════════════════ -->
+<div class="topic" id="t4">
+  <div class="topic-header">
+    <div class="topic-num lav">4</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 09 — Lecture 01</div>
+      <h2>Introduction to Pakistan's Foreign Policy</h2>
+      <span class="topic-clo">CLO 01, 02 &amp; 03 — Foreign Relations &amp; Determinants</span>
+    </div>
+  </div>
+
+  <div class="card accent-lav">
+    <h3><span class="icon">🌐</span> What is Foreign Policy? (Simple Definition)</h3>
+    <p>Foreign Policy is how a country deals with the rest of the world. It's the set of rules and strategies a government follows when talking to, trading with, or dealing with other countries. Every country has one — it's like the country's personality and rules for international relationships.</p>
+    <p>Think of it this way: just as individuals have values that guide how they behave with friends and strangers, countries have foreign policies that guide how they behave with other nations.</p>
+    <p>It includes: <strong>defence and security, trade and economics, diplomacy, humanitarian aid, alliances, and international organisations.</strong></p>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">📖</span> Constitutional Basis — Article 40</h3>
+    <div class="callout">
+      <p><strong>Article 40 of Pakistan's Constitution says:</strong> "The State shall endeavor to preserve and strengthen fraternal relations among Muslim countries based on Islamic unity, support the common interests of the peoples of Asia, Africa and Latin America, promote international peace and security, foster goodwill and friendly relations among all nations and encourage the settlement of international disputes by peaceful means."</p>
+    </div>
+    <p style="margin-top:10px">This means Pakistan's constitution itself guides the country to pursue <strong>peaceful relations, Islamic solidarity, and support for developing nations</strong>.</p>
+    <p><strong>Quaid-e-Azam's Vision:</strong> "Our object should be peace within and peace without. We want to live peacefully and maintain cordial, friendly relations with our immediate neighbours and with the world at large."</p>
+  </div>
+
+  <div class="card accent-gold">
+    <h3><span class="icon">🧭</span> Key Determinants of Pakistan's Foreign Policy</h3>
+    <p>Determinants are the factors that shape how Pakistan conducts its foreign policy. Think of them as the forces that push and pull Pakistan's decisions on the world stage.</p>
+    <div class="two-col" style="margin-top:12px">
+      <ul>
+        <li><strong>Geography:</strong> Borders with India, Afghanistan, China, Iran — all major powers/conflicts</li>
+        <li><strong>Security threats:</strong> India (Kashmir dispute), Afghanistan (terrorism), nuclear rivalry</li>
+        <li><strong>Economic needs:</strong> Need for foreign investment, trade, IMF support</li>
+        <li><strong>Islamic identity:</strong> Solidarity with Muslim world — OIC, support for Palestinians</li>
+      </ul>
+      <ul>
+        <li><strong>Military:</strong> Pakistan's armed forces are a major driver of foreign policy decisions</li>
+        <li><strong>US relationship:</strong> Aid dependency and security partnership</li>
+        <li><strong>China partnership:</strong> CPEC and strategic balance against India</li>
+        <li><strong>Nuclear status:</strong> Forces Pakistan to be cautious but also assertive</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>Pakistan's Foreign Policy — Introduction &amp; Determinants</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Identify and discuss the major determinants of Pakistan's foreign policy. How do these factors shape Pakistan's relationships with other nations?</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> Pakistan's foreign policy is shaped by a complex interplay of geographic, ideological, economic, and security factors. Understanding these determinants helps explain why Pakistan behaves the way it does on the international stage.</p>
+        <p><strong>1. Geopolitical Location:</strong> Pakistan sits at the crossroads of South Asia, Central Asia, and the Middle East. This geography is both an asset and a burden — it makes Pakistan strategically important to world powers but also vulnerable to regional conflicts, particularly in Afghanistan. It explains Pakistan's importance to the US during both the Cold War and post-9/11 era.</p>
+        <p><strong>2. The India Factor:</strong> Perhaps the single most dominant determinant. The unresolved Kashmir dispute, three wars (1947, 1965, 1971), nuclear rivalry, and ongoing tensions mean that almost every aspect of Pakistan's foreign policy — alliances, defence spending, nuclear programme — is shaped by relations with India.</p>
+        <p><strong>3. Islamic Identity:</strong> Pakistan was created as an Islamic state. Its foreign policy reflects solidarity with Muslim countries through OIC, support for Palestinian cause, and partnerships with Saudi Arabia, Turkey, and Gulf states. This shapes its stance in UN votes and international forums.</p>
+        <p><strong>4. Military's Role:</strong> Pakistan's powerful military significantly influences foreign policy decisions — particularly on matters of national security, nuclear policy, relations with Afghanistan, and US partnership. Civil-military relations are a key internal determinant.</p>
+        <p><strong>5. Economic Dependency:</strong> Pakistan's economic reliance on IMF, World Bank, US aid, and Gulf remittances creates constraints on foreign policy autonomy. It cannot afford to antagonise major donors.</p>
+        <p><strong>6. Nuclear Capability:</strong> Pakistan's nuclear weapons programme (since 1998 tests) has shaped its deterrence posture against India and given it leverage in international negotiations.</p>
+        <p><strong>7. China-Pakistan Relations:</strong> The strategic partnership with China, particularly through CPEC, has emerged as a central pillar — providing economic lifeline and strategic balance against India and US pressure.</p>
+        <p><strong>Conclusion:</strong> Pakistan's foreign policy is not made in a vacuum — it is a product of its geography, history, security anxieties, and economic needs. A successful foreign policy requires balancing these multiple determinants while pursuing national interest.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-div"></div>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 5 — SIX PHASES OF FP
+══════════════════════════════════════════ -->
+<div class="topic" id="t5">
+  <div class="topic-header">
+    <div class="topic-num green">5</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 09 — Lecture 02 (PDF)</div>
+      <h2>Six Important Phases of Pakistan's Foreign Policy</h2>
+      <span class="topic-clo">CLO 01, 02 &amp; 03 — Historical Evolution of Foreign Policy</span>
+    </div>
+  </div>
+
+  <div class="card accent-green">
+    <h3><span class="icon">📌</span> Overview — Why Phases Matter</h3>
+    <p>Pakistan's foreign policy has not been the same throughout its history. Different global events, leaders, and crises forced Pakistan to change its approach. Scholars divide Pakistan's FP history into <strong>six distinct phases</strong>, each with a different dominant strategy. Learning these phases helps you understand how Pakistan evolved from a new, poor country to a nuclear-armed middle power.</p>
+  </div>
+
+  <table class="phase-table">
+    <thead>
+      <tr><th>#</th><th>Phase Name</th><th>Years</th><th>Key Strategy</th><th>Main Events</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Era of Neutrality</td><td>1947–1953</td><td>Stay neutral between US &amp; USSR</td><td>Kashmir War 1948, refugee crisis, economic weakness</td></tr>
+      <tr><td>2</td><td>Era of Alliances</td><td>1954–1962</td><td>Join Western alliance system</td><td>SEATO (1954), CENTO (1955), US Defence Pact (1959)</td></tr>
+      <tr><td>3</td><td>Era of Bilateralism</td><td>1963–1978</td><td>Equidistance from superpowers</td><td>1965 War, China rapprochement, 1971 War, Bhutto era</td></tr>
+      <tr><td>4</td><td>Era of Non-Alignment</td><td>1979–1989</td><td>Join Non-Aligned Movement (NAM)</td><td>Soviet invasion of Afghanistan, US-Pak partnership, nuclear prog.</td></tr>
+      <tr><td>5</td><td>Era of Post-Cold War</td><td>1990–9/11/2001</td><td>Adjust to unipolar world</td><td>Cold War ends, FATF pressure, 1998 nuclear tests, Kargil</td></tr>
+      <tr><td>6</td><td>Era of Global Anti-terrorism</td><td>2001–Present</td><td>Frontline state in War on Terror</td><td>9/11, Afghanistan operation, CPEC, FATF grey-listing</td></tr>
+    </tbody>
+  </table>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">Phase 1 — Era of Neutrality (1947–1953)</div>
+      <p><strong>Situation:</strong> Pakistan was a newborn, poor country facing threats from India (Kashmir), Afghanistan (Pakhtunistan issue), and economic collapse with millions of refugees. Both USA and USSR wanted Pakistan's support in the Cold War, but Pakistan was too weak to commit.<br>
+      <strong>Why it ended:</strong> Neutrality could not protect Pakistan from India. Pakistan needed military and economic help urgently, so it opted for the Western alliance system.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Phase 2 — Era of Alliances (1954–1962)</div>
+      <p><strong>Pakistan joined:</strong> SEATO (South East Asia Treaty Organisation) 1954 and CENTO (Central Treaty Organisation) 1955. Also signed a US Defence Pact (1959). PM Shorwadhi famously called Pakistan "the most allied ally" of the US.<br>
+      <strong>Benefits:</strong> Received substantial US military and economic aid. Modernised military.<br>
+      <strong>Why it failed:</strong> US used SEATO/CENTO against communism — not India. When Indo-Pakistan war came (1965), US supported India too. Pakistan realised alliances didn't serve its core interest (Kashmir). U-2 spy plane incident (1960) embarrassed Pakistan with USSR.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Phase 3 — Era of Bilateralism (1963–1978)</div>
+      <p><strong>Strategy:</strong> Equidistance — don't be fully committed to either US or USSR. Develop bilateral relations with both superpowers AND China.<br>
+      <strong>Key developments:</strong> After 1965 war (US suspended military aid), Pakistan turned to China as alternative. Bhutto era (1970s): withdrew from Commonwealth and SEATO, hosted Islamic Summit (Lahore 1974), toured Muslim world, pursued nuclear programme secretly.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Phase 4 — Era of Non-Alignment (1979–1989)</div>
+      <p><strong>Trigger:</strong> Soviet invasion of Afghanistan (December 1979) changed everything. Iran withdrew from CENTO (after Islamic Revolution 1979), Pakistan also quit CENTO. Pakistan joined NAM (Havana Summit 1979).<br>
+      <strong>But not truly non-aligned:</strong> Pakistan became the frontline state against Soviet invasion of Afghanistan, cooperating with US and hosting millions of Afghan refugees. US provided $3.2 billion (1982) and $4.02 billion (1986) packages. Nuclear programme got US tolerance.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Phase 5 — Era of Post-Cold War (1990–2001)</div>
+      <p><strong>Situation:</strong> When Cold War ended in 1990, Pakistan lost its strategic importance to the US overnight. Pakistan was left abandoned in Afghanistan, pressured over nuclear programme, given terrorist tag, isolated internationally.<br>
+      <strong>Key events:</strong> 1998 nuclear tests (Chaghi hills) — India tested first, Pakistan responded. US imposed economic sanctions. Kargil crisis (1999) — near-war with India. Pakistan's international standing hit rock bottom.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Phase 6 — Era of Global Anti-terrorism (9/11/2001–Present)</div>
+      <p><strong>9/11 changed everything:</strong> US gave Pakistan ultimatum — support War on Terror or face consequences. Pakistan under Musharraf joined immediately. Became frontline state again.<br>
+      <strong>Benefits &amp; Costs:</strong> Received billions in Coalition Support Funds. But also faced massive terrorism inside Pakistan (TTP), drone attacks, and death of 70,000+ Pakistanis in terrorism-related violence.<br>
+      <strong>CPEC era:</strong> China emerged as Pakistan's most reliable partner — $62 billion investment under CPEC within Belt and Road Initiative.</p>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>Six Phases of Pakistan's Foreign Policy</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Trace the evolution of Pakistan's foreign policy from 1947 to 2001, highlighting the major shifts and their causes.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> Pakistan's foreign policy has undergone dramatic transformation over seven decades, driven by changing international circumstances, domestic needs, and regional conflicts. These changes can be traced through five distinct phases from 1947 to 2001.</p>
+        <p><strong>Phase 1 — Neutrality (1947–1953):</strong> Pakistan emerged in 1947 as a weak, economically fragile state facing the Kashmir War with India, Afghan hostility over Pakhtunistan, and refugee crisis. With four options (remain neutral, rely on Muslim world, join Soviet bloc, join Western alliance), Pakistan initially attempted neutrality but could not sustain it due to security threats from India.</p>
+        <p><strong>Phase 2 — Alliance Era (1954–1962):</strong> Pakistan joined SEATO (1954) and CENTO (1955), earning the title "most allied ally" of the US. Pakistan received substantial military and economic aid. However, the alliance failed its core purpose — when war came with India in 1965, the US stayed neutral. The U-2 spy plane incident also damaged Pak-US trust. This phase exposed the limits of alliance politics for Pakistan.</p>
+        <p><strong>Phase 3 — Bilateralism (1963–1978):</strong> Pakistan pivoted to equidistance — developing relations with China (a new strategic partner), USSR, and continuing limited US engagement. The 1965 and 1971 wars showed Pakistan couldn't rely solely on US. Bhutto's era emphasised Muslim world solidarity (1974 Islamic Summit), withdrawal from SEATO and Commonwealth, and secret nuclear programme.</p>
+        <p><strong>Phase 4 — Non-Alignment (1979–1989):</strong> Pakistan joined NAM in 1979 but immediately became a frontline US ally against Soviet invasion of Afghanistan. This apparent contradiction reflected Pakistan's pragmatism — formally non-aligned but practically deeply aligned with the US for strategic and financial reasons.</p>
+        <p><strong>Phase 5 — Post-Cold War (1990–2001):</strong> Pakistan was abandoned after Soviets left Afghanistan. US imposed sanctions, Pakistan faced nuclear isolation, and Kargil (1999) revealed military's reckless adventurism. Pakistan's nuclear tests in 1998 brought more sanctions but established deterrence.</p>
+        <p><strong>Conclusion:</strong> Pakistan's FP evolution reveals a pattern of pragmatic adaptation to external pressures rather than consistent principled strategy. The key lesson is that sustainable foreign policy must be rooted in domestic stability and clear national interest — not dependence on external patrons.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-div"></div>
+
+<!-- ══════════════════════════════════════════
+     TOPIC 6 — BIG POWERS & NEIGHBOURS
+══════════════════════════════════════════ -->
+<div class="topic" id="t6">
+  <div class="topic-header">
+    <div class="topic-num blue">6</div>
+    <div class="topic-info">
+      <div class="topic-week">Week 10 — Lecture 01 &amp; 02</div>
+      <h2>Pakistan's Relations with Big Powers, Neighbours &amp; Muslim World</h2>
+      <span class="topic-clo">CLO 01, 02 &amp; 03 — Geo-strategic Importance</span>
+    </div>
+  </div>
+
+  <div class="card accent-blue">
+    <h3><span class="icon">🗺️</span> Geo-Strategic Importance of Pakistan — What Does it Mean?</h3>
+    <p>"Geo-strategic" means the strategic importance of a country because of its <strong>geography</strong> (physical location). Pakistan's location is extraordinary — it sits at the meeting point of three major regions: <strong>South Asia, Central Asia, and the Middle East</strong>. This makes it unavoidable in regional and global politics.</p>
+    <div class="two-col" style="margin-top:12px">
+      <div>
+        <strong style="color:var(--blue)">Pakistan's Borders:</strong>
+        <ul style="margin-top:6px">
+          <li><strong>East:</strong> India — long disputed border, Kashmir conflict</li>
+          <li><strong>Northwest:</strong> Afghanistan — Durand Line dispute</li>
+          <li><strong>West:</strong> Iran — shared culture and trade</li>
+          <li><strong>Northeast:</strong> China — Karakoram Highway, CPEC</li>
+          <li><strong>South:</strong> Arabian Sea — Karachi &amp; Gwadar ports</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--blue)">Why This Location Matters:</strong>
+        <ul style="margin-top:6px">
+          <li>Bridge between South &amp; Central Asia</li>
+          <li>Connects oil-rich Middle East to energy-hungry Asia</li>
+          <li>Proximity to world's most powerful rivals (China, India, Russia)</li>
+          <li>Arabian Sea access = warm water ports year-round</li>
+          <li>Gwadar Port near Strait of Hormuz (key oil route)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card accent-teal">
+    <h3><span class="icon">🚂</span> CPEC — China Pakistan Economic Corridor (Explained Simply)</h3>
+    <p>CPEC is the biggest economic project in Pakistan's history. It's a network of roads, railways, power plants, and infrastructure projects connecting <strong>Kashgar (Western China) to Gwadar Port (Pakistan's Arabian Sea coast)</strong> — a distance of about 3,000 km.</p>
+    <p>Think of it as building a massive highway from China's western interior through Pakistan to the sea — allowing China to trade with the world without going around Southeast Asia (through the Strait of Malacca, which the US could block). For Pakistan, it means new roads, ports, electricity plants, and economic development.</p>
+    <div class="keybox">
+      <div class="kbtitle">CPEC Key Facts</div>
+      <ul>
+        <li>Total investment: approximately <strong>$62 billion</strong></li>
+        <li>Part of China's larger <strong>Belt and Road Initiative (BRI)</strong></li>
+        <li>Gwadar Port is the centrepiece — near Strait of Hormuz</li>
+        <li>Karakoram Highway: one of world's highest paved roads through Gilgit-Baltistan</li>
+        <li>Reduces China's dependence on Strait of Malacca by 12,000 km sea route</li>
+        <li>For Pakistan: new power plants (solved energy crisis), upgraded roads, industrial zones</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card accent-coral">
+      <h3><span class="icon">🇵🇰🇮🇳</span> Pakistan-India Relations</h3>
+      <ul>
+        <li>Three full wars: 1947, 1965, 1971</li>
+        <li>Near-war: Kargil 1999, Surgical strikes 2016</li>
+        <li>Core dispute: <strong>Kashmir</strong> — both claim entire territory</li>
+        <li>India's Art. 370 revocation (Aug 5, 2019) — abolished Kashmir's special status</li>
+        <li>Nuclear deterrence prevents full-scale war but tension is constant</li>
+        <li>No trade normalisation despite shared history</li>
+        <li>People-to-people contact minimal</li>
+      </ul>
+    </div>
+    <div class="card accent-gold">
+      <h3><span class="icon">🇵🇰🇦🇫</span> Pakistan-Afghanistan Relations</h3>
+      <ul>
+        <li>Durand Line dispute — Afghanistan has never formally accepted this border (drawn 1893 by British)</li>
+        <li>Pakistan hosted 3+ million Afghan refugees (1980s) — world's largest refugee hosting</li>
+        <li>Pakistan supported Mujahideen against Soviets (1979–89)</li>
+        <li>Post-2001: Taliban vs Pakistan complications</li>
+        <li>TTP (Tehreek-e-Taliban Pakistan) launches attacks from Afghan soil</li>
+        <li>Trade potential: Afghanistan as transit route to Central Asia</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card accent-lav">
+    <h3><span class="icon">🕌</span> Pakistan and the Muslim World</h3>
+    <div class="two-col">
+      <div>
+        <strong style="color:var(--lavender)">Saudi Arabia:</strong>
+        <ul style="margin-top:6px">
+          <li>Key financial supporter — loans during crises</li>
+          <li>Over 4 million Pakistanis work in KSA (remittances)</li>
+          <li>Pakistan Army training cooperation</li>
+          <li>Religious and ideological alignment</li>
+        </ul>
+        <strong style="color:var(--lavender)" style="margin-top:12px;display:block">Turkey:</strong>
+        <ul style="margin-top:6px">
+          <li>Growing strategic partnership in recent years</li>
+          <li>Support on Kashmir in OIC forums</li>
+          <li>Defence cooperation (drones, naval)</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--lavender)">OIC (Organisation of Islamic Cooperation):</strong>
+        <ul style="margin-top:6px">
+          <li>Pakistan is founding member</li>
+          <li>Uses OIC to raise Kashmir issue</li>
+          <li>Pakistani diplomats hold senior OIC positions</li>
+        </ul>
+        <strong style="color:var(--lavender)" style="margin-top:12px;display:block">Gulf States:</strong>
+        <ul style="margin-top:6px">
+          <li>UAE, Qatar, Kuwait — home to millions of Pakistani workers</li>
+          <li>Remittances: major source of foreign exchange</li>
+          <li>Investment in Pakistan's economy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card accent-green">
+    <h3><span class="icon">🔐</span> Strategic Importance Summary — Opportunities &amp; Challenges</h3>
+    <div class="two-col">
+      <div>
+        <span class="badge badge-green">Opportunities</span>
+        <ul style="margin-top:8px">
+          <li>CPEC and BRI connectivity</li>
+          <li>Regional trade corridor</li>
+          <li>Counterterrorism cooperation leverage</li>
+          <li>Diplomatic role in reconciliation</li>
+          <li>Agricultural &amp; Indus water resources</li>
+          <li>Cultural &amp; historical crossroads</li>
+          <li>Warm-water port (Gwadar) for China</li>
+        </ul>
+      </div>
+      <div>
+        <span class="badge badge-coral">Challenges</span>
+        <ul style="margin-top:8px">
+          <li>Indian-Pakistani rivalry and nuclear risks</li>
+          <li>Afghan terrorism spillover (TTP)</li>
+          <li>Geopolitical rivalry between US, China, India</li>
+          <li>Economic development lag despite strategic position</li>
+          <li>Security costs of being frontline state</li>
+          <li>Balochistan insurgency near Gwadar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="qa-section">
+    <div class="qa-head">
+      <div class="qa-icon">Q</div>
+      <div><h3>10-Mark Exam Questions &amp; Detailed Answers</h3><p>Geo-strategic Importance &amp; Pakistan's International Relations</p></div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Question 1</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Discuss the geo-strategic importance of Pakistan and explain how CPEC enhances Pakistan's position in the international arena.</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> Pakistan's geographic location at the intersection of South Asia, Central Asia, and the Middle East makes it one of the most strategically significant countries in the world. This importance has both blessed and burdened Pakistan throughout its history.</p>
+        <p><strong>Geo-strategic Location:</strong></p>
+        <ul>
+          <li><strong>Bridge Position:</strong> Pakistan connects South Asia to Central Asia — a role no other country can fulfill. This makes it a mandatory transit route for trade, energy pipelines, and military logistics.</li>
+          <li><strong>Arabian Sea Access:</strong> Pakistan's coastline provides year-round warm-water access — strategically crucial for naval operations and sea trade. Gwadar Port, located near the Strait of Hormuz (through which 20% of world's oil passes), gives Pakistan extraordinary leverage.</li>
+          <li><strong>Proximity to Major Powers:</strong> Pakistan shares borders with China, India, Afghanistan, and Iran — four countries with major global or regional significance. This makes Pakistan a balancing pivot in Asia's geopolitics.</li>
+          <li><strong>Energy Corridor:</strong> Proposed IPI (Iran-Pakistan-India) and TAPI (Turkmenistan-Afghanistan-Pakistan-India) pipelines show Pakistan's potential as energy transit route from hydrocarbon-rich regions to energy-hungry countries.</li>
+        </ul>
+        <p><strong>CPEC and Its Enhancement of Pakistan's Strategic Position:</strong></p>
+        <ol>
+          <li><strong>Economic lifeline:</strong> $62 billion investment — the largest FDI in Pakistan's history. Power plants added over 10,000 MW to the grid, ending energy shortages. Road infrastructure links provinces for first time.</li>
+          <li><strong>Gwadar Port development:</strong> Transforms Pakistan's coastline into a Chinese strategic asset — giving Beijing access to Arabian Sea for the first time without going through Strait of Malacca. This creates permanent Chinese strategic interest in Pakistan's stability.</li>
+          <li><strong>China's dependence:</strong> China's reliance on Gwadar means Pakistan gains leverage — Beijing cannot abandon Pakistan without losing its biggest BRI project.</li>
+          <li><strong>Regional connectivity:</strong> CPEC creates infrastructure connecting China, Pakistan, Afghanistan, Central Asia, and the Middle East — positioning Pakistan as the hub of future regional trade.</li>
+          <li><strong>Counterbalance:</strong> CPEC reduces Pakistan's dependence on the US by creating a robust alternative patron, giving Pakistan more foreign policy autonomy.</li>
+        </ol>
+        <p><strong>Challenges:</strong> Baloch insurgency threatens CPEC projects; Indian opposition (India-Pakistan rivalry extends to CPEC); debt sustainability concerns about Chinese loans; US pressure against BRI.</p>
+        <p><strong>Conclusion:</strong> Pakistan's geo-strategic position is an inherent national asset. CPEC represents the most ambitious attempt to convert geographic advantage into economic development and strategic independence. If successfully implemented, CPEC could transform Pakistan from a security liability into a regional economic hub.</p>
+      </div>
+    </div>
+
+    <hr class="q-divider">
+
+    <div class="question">
+      <div class="q-label">Question 2</div>
+      <div class="marks-box">10 Marks</div>
+      <div class="q-text">Analyse Pakistan's relations with India and Afghanistan. Why have these relationships remained problematic despite geographic proximity?</div>
+      <div class="a-label">Model Answer</div>
+      <div class="a-text">
+        <p><strong>Introduction:</strong> Pakistan's two most challenging bilateral relationships — with India and Afghanistan — are also its most consequential. Despite being neighbours sharing history, culture, and economic interests, both relationships have been defined by conflict, mistrust, and missed opportunities.</p>
+        <p><strong>Pakistan-India Relations — Core Problems:</strong></p>
+        <ol>
+          <li><strong>Kashmir Dispute:</strong> The foundational unresolved issue since 1947. Both countries claim the full territory. Three wars have been fought (1947, 1965, 1971) without resolution. India's Article 370 revocation in August 2019, stripping Kashmir's special status, represents a new escalation that Pakistan strongly opposes.</li>
+          <li><strong>Nuclear Dimension:</strong> Both countries possess nuclear weapons. This creates existential risks but also deters full-scale conventional war — a paradoxical stability called "nuclear peace."</li>
+          <li><strong>Water Dispute:</strong> The Indus Waters Treaty (1960) governs river sharing, but India's plans for dams on Pakistani rivers create friction.</li>
+          <li><strong>Proxy Accusations:</strong> Each accuses the other of sponsoring terrorism — India alleges Pakistan-based militant groups like LeT; Pakistan alleges Indian interference in Balochistan (RAW operations).</li>
+          <li><strong>Trade Potential Squandered:</strong> Despite $37 billion potential bilateral trade, actual trade is negligible. Most-Favoured Nation (MFN) status was withdrawn by both sides.</li>
+        </ol>
+        <p><strong>Pakistan-Afghanistan Relations — Core Problems:</strong></p>
+        <ol>
+          <li><strong>Durand Line:</strong> Afghanistan refuses to recognise the Durand Line (British-drawn 1893) as a legitimate international border. This creates permanent sovereignty dispute.</li>
+          <li><strong>TTP Terrorism:</strong> Tehreek-e-Taliban Pakistan, operating from Afghan soil, conducts terrorist attacks inside Pakistan. Taliban government in Kabul (since 2021) has not taken effective action against TTP despite Pakistani pressure.</li>
+          <li><strong>Refugee burden:</strong> Pakistan hosts 3–4 million Afghan refugees — a massive economic and security strain.</li>
+          <li><strong>Historical baggage:</strong> Pakistan's support of Taliban in 1990s and after 2001 now creates "blow-back" — armed groups Pakistan once supported now attack Pakistan.</li>
+        </ol>
+        <p><strong>Why These Remain Problematic:</strong></p>
+        <ul>
+          <li>Unresolved historical disputes (Kashmir, Durand Line) are too politically sensitive for either side to compromise on</li>
+          <li>Domestic politics in all three countries benefit from external threat narratives</li>
+          <li>Military establishments maintain institutional interest in perpetuating threat perception</li>
+          <li>Great power involvement (US, China) sometimes complicates bilateral resolution</li>
+        </ul>
+        <p><strong>Conclusion:</strong> Pakistan's most important foreign policy challenge remains transforming its neighbourhood from a zone of conflict to one of cooperation. This requires political courage, people-to-people diplomacy, and economic interdependence that makes conflict too costly for all parties.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="margin-top:60px;padding:28px 0;border-top:2px solid var(--border);text-align:center">
+  <div class="hero-badge">Study Smart. Score High.</div>
+  <p style="color:var(--muted);margin-top:12px;font-size:13px">This guide covers Weeks 07–10 of PST lectures. All questions are 10-mark format matching your exam style.</p>
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:16px;flex-wrap:wrap">
+    <span class="badge badge-teal">PPP Era 2008–13</span>
+    <span class="badge badge-gold">PTI Era 2018–22</span>
+    <span class="badge badge-coral">Hybrid Warfare</span>
+    <span class="badge badge-lav">Foreign Policy</span>
+    <span class="badge badge-green">Six FP Phases</span>
+    <span class="badge" style="background:rgba(96,165,250,0.15);color:var(--blue);border:1px solid rgba(96,165,250,0.3)">Geo-strategy</span>
+  </div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
